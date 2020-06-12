@@ -74,6 +74,10 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector(".section-center");
+const filterButton = document.querySelectorAll(".filter-btn");
+
+
+//load windows
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
 });
@@ -95,7 +99,17 @@ function displayMenuItems(menuItems)
         </article>`;
   });
   displayMenu = displayMenu.join("");
-  console.log(displayMenu);
-
+  // console.log(displayMenu);
   sectionCenter.innerHTML = displayMenu;
 }
+
+//filter items
+filterButton.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(function (menuItem) {
+       
+      return menuItem;
+    });
+  });
+});
